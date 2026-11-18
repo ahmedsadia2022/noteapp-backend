@@ -3,6 +3,11 @@ const mongoose = require('mongoose');
 const path = require('path');
 require('dotenv').config();
 
+const cors = require('cors');
+// ... other code ...
+app.use(cors({
+    origin: 'https://YOUR-VERCEL-LINK-HERE.vercel.app' // <-- Paste your Vercel URL here
+}));
 
 const authRoutes = require('./project/routes/authRoutes'); // Update paths if needed
 const noteRoutes = require('./project/routes/noteRoutes');
