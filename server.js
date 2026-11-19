@@ -8,8 +8,13 @@ const cors = require('cors');
 
 
 app.use(cors({
-    origin: 'https://YOUR-VERCEL-LINK-HERE.vercel.app' // <-- Paste your Vercel URL here
+    origin: 'https://noteapp-frontend-alpha.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
 }));
+
+app.options('*', cors());
 
 const authRoutes = require('./project/routes/authRoutes'); // Update paths if needed
 const noteRoutes = require('./project/routes/noteRoutes');
